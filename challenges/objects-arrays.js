@@ -153,28 +153,38 @@ Create a new array named lowerCase and map over each name to convert them all to
 */
 
 const lowerCase = [];
+
+zooAnimals.map(items => {
+  lowerCase.push(items.animal_name.toLowerCase());
+});
 console.log(lowerCase); 
 
 /* Request 3: .filter() 
 
-The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
+The zoos are concerned about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-const lowerPopulation = [];
+const lowerPopulation = zooAnimals.filter(count => count.population < 5);
 console.log(lowerPopulation);
 
 /* Request 4: .reduce() 
 
-The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
+The zoos need to know their total animal population across the United States.  
+Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = 0;
+const populationTotal = zooAnimals.reduce((acc, items) => {
+  acc = acc + items.population
+  return acc
+}, 0)
 console.log(populationTotal);
 
 
 /* 
 
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
+
+DONE!!!!
 
 */
 
